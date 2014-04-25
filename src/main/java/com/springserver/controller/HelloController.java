@@ -1,7 +1,7 @@
-package com.hulefei.springserver.controller;
+package com.springserver.controller;
 
-import com.hulefei.springserver.po.HelloEntity;
-import com.hulefei.springserver.service.HelloService;
+import com.springserver.po.HelloEntity;
+import com.springserver.service.HelloService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

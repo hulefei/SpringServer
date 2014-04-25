@@ -1,4 +1,4 @@
-package com.hulefei.springserver;
+package com.springserver;
 
 import org.junit.Before;
 import org.junit.Test;

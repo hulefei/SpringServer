@@ -3,10 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hulefei.springserver.dao.HelloDao">
+<mapper namespace="com.springserver.dao.HelloDao">
 
-
-    <resultMap id="helloMap" type="com.hulefei.springserver.po.HelloEntity">
+    <resultMap id="helloMap" type="com.springserver.po.HelloEntity">
         <id property="id" column="pk_id" />
         <result property="name" column="name"/>
         <result property="age" column="age"/>
@@ -16,7 +15,6 @@
           SELECT Name, Age FROM hello_table
         ]]>
     </select>
-
 
     <!--<insert id="insertCurrency" parameterType="com.the9.qjrun.po.account.Currency" useGeneratedKeys="true" keyProperty="id">-->
         <!--<![CDATA[-->

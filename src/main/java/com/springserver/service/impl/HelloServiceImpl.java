@@ -1,8 +1,8 @@
-package com.hulefei.springserver.service.impl;
+package com.springserver.service.impl;
 
-import com.hulefei.springserver.dao.HelloDao;
-import com.hulefei.springserver.po.HelloEntity;
-import com.hulefei.springserver.service.HelloService;
+import com.springserver.dao.HelloDao;
+import com.springserver.po.HelloEntity;
+import com.springserver.service.HelloService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

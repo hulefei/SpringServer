@@ -1,7 +1,7 @@
-package com.hulefei.springserver.dao.impl;
+package com.springserver.dao.impl;
 
-import com.hulefei.springserver.dao.HelloDao;
-import com.hulefei.springserver.po.HelloEntity;
+import com.springserver.dao.HelloDao;
+import com.springserver.po.HelloEntity;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 

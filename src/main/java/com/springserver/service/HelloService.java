@@ -1,6 +1,6 @@
-package com.hulefei.springserver.service;
+package com.springserver.service;
 
-import com.hulefei.springserver.po.HelloEntity;
+import com.springserver.po.HelloEntity;
 
 /**
  * Created by hanson on 14-4-25.

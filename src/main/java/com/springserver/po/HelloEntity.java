@@ -1,4 +1,4 @@
-package com.hulefei.springserver.po;
+package com.springserver.po;
 
 /**
  * Created by hanson on 14-4-25.
