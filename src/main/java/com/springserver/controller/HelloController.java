@@ -8,20 +8,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import java.util.Random;
 
 @Controller
-@RequestMapping("/")
 public class HelloController {
 
     @Resource(name="helloService")
     private HelloService helloService;
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-		model.addAttribute("message", "Hello Git");
-
         HelloEntity entity = helloService.getHelloEntity();
-        System.out.println(entity.getName() + ":" + entity.getAge());
+        System.out.println(entity.getPkid() + ":" + entity.getName() + ":" + entity.getAge());
+        model.addAttribute("message", entity.toString());
         return "hello";
 	}
+
+    @RequestMapping(value="/insertEntity",method = RequestMethod.GET)
+    public String insertEntity(ModelMap model) {
+        HelloEntity entity = new HelloEntity();
+        Random random = new Random();
+        int rand = random.nextInt();
+        entity.setPkid(rand);
+        entity.setName("name" + rand);
+        entity.setAge(rand);
+
+        int ret = helloService.insertHelloEntity(entity);
+        model.addAttribute("message", ret);
+        return "hello";
+//        return helloService.insertHelloEntity(entity);
+    }
 }

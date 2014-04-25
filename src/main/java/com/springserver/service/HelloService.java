@@ -8,4 +8,5 @@ import com.springserver.po.HelloEntity;
 public interface HelloService {
 
     public HelloEntity getHelloEntity();
+    public int insertHelloEntity(HelloEntity entity);
 }

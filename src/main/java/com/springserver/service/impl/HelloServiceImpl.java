@@ -20,4 +20,9 @@ public class HelloServiceImpl implements HelloService{
     public HelloEntity getHelloEntity() {
         return helloDao.selectHello();
     }
+
+    @Override
+    public int insertHelloEntity(HelloEntity entity) {
+        return helloDao.insertHello(entity);
+    }
 }

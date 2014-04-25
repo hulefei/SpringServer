@@ -20,4 +20,10 @@ public class HelloDaoImpl implements HelloDao {
     public HelloEntity selectHello() {
         return sqlSessionTemplate.selectOne("getHello");
     }
+
+    @Override
+    public int insertHello(HelloEntity entity) {
+        int insert = sqlSessionTemplate.insert("insertHello", entity);
+        return insert;
+    }
 }

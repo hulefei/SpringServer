@@ -6,21 +6,22 @@
 <mapper namespace="com.springserver.dao.HelloDao">
 
     <resultMap id="helloMap" type="com.springserver.po.HelloEntity">
-        <id property="id" column="pk_id" />
+        <!--<id property="id" column="pk_id" />-->
+        <result property="pkid" column="PK_Id"/>
         <result property="name" column="name"/>
         <result property="age" column="age"/>
     </resultMap>
     <select id="getHello" parameterType="int" resultMap="helloMap">
         <![CDATA[
-          SELECT Name, Age FROM hello_table LIMIT 1
+          SELECT PK_Id, Name, Age FROM hello_table LIMIT 1
         ]]>
     </select>
 
-    <!--<insert id="insertCurrency" parameterType="com.the9.qjrun.po.account.Currency" useGeneratedKeys="true" keyProperty="id">-->
-        <!--<![CDATA[-->
-          <!--insert into currency (Currency1,Currency2,Currency3,Currency4,Currency5) values (#{currency1},#{currency2},#{currency3},#{currency4},#{currency5})-->
-        <!--]]>-->
-    <!--</insert>-->
+    <insert id="insertHello" parameterType="com.springserver.po.HelloEntity">
+        <![CDATA[
+          insert into hello_table (PK_Id,Name,Age) values (#{pkid},#{name},#{age})
+        ]]>
+    </insert>
     <!--<resultMap id="currencyResultMap" type="com.the9.qjrun.po.account.Currency">-->
         <!--<id property="id" column="pk_id" />-->
         <!--<result property="currency1" column="currency1"/>-->
