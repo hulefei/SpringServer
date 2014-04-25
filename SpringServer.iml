@@ -11,6 +11,7 @@
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -48,6 +49,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:3.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.30" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.2.7" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.1.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.2" level="project" />

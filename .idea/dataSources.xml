@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2121681313">
+  <component name="DataSourceManagerImpl" format="xml" hash="4126897201">
     <data-source source="LOCAL" name="MySQL - test@42.121.4.97" uuid="da6de27a-1eef-48a6-9796-39a3f62465ae">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -12,6 +12,13 @@
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
       </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="SQLite" uuid="078ed6c9-8edc-49d3-872a-f6c6190bed91">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/database.sqlite</jdbc-url>
       <libraries />
     </data-source>
   </component>
