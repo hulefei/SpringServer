@@ -1,15 +1,39 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
     <context:component-scan base-package="com.hulefei.springserver"/>
+    <!--设置jdbc.properties路径-->
+    <util:properties id="dataSourceProps" location="WEB-INF/jdbc.properties"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="#{dataSourceProps['jdbc.driverClassName']}"/>
+        <property name="url" value="#{dataSourceProps['jdbc.url']}"/>
+        <property name="username" value="#{dataSourceProps['jdbc.username']}"/>
+        <property name="password" value="#{dataSourceProps['jdbc.password']}"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="mapperLocations" value="classpath*:config/mappers/**/*.xml" />
+    </bean>
+
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+          scope="prototype">
+        <constructor-arg ref="sqlSessionFactory" />
+    </bean>
+
+    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+    <!--<property name="dataSource" ref="dataSource" />-->
+    <!--</bean>-->
 
 </beans>

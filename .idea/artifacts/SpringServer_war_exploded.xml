@@ -18,6 +18,11 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.30" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.1.1" />
         </element>
       </element>
     </root>
