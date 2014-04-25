@@ -8,4 +8,5 @@ import com.springserver.po.HelloEntity;
 public interface HelloDao {
     public HelloEntity selectHello();
     public int insertHello(HelloEntity entity);
+    public int deleteHello(HelloEntity entity);
 }

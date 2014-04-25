@@ -9,4 +9,5 @@ public interface HelloService {
 
     public HelloEntity getHelloEntity();
     public int insertHelloEntity(HelloEntity entity);
+    public int deleteHelloEntity(HelloEntity entity);
 }

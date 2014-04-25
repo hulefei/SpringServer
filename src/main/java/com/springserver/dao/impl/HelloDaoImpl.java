@@ -26,4 +26,9 @@ public class HelloDaoImpl implements HelloDao {
         int insert = sqlSessionTemplate.insert("insertHello", entity);
         return insert;
     }
+
+    @Override
+    public int deleteHello(HelloEntity entity) {
+        return sqlSessionTemplate.delete("deleteHello", entity);
+    }
 }

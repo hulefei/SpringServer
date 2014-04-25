@@ -38,4 +38,15 @@ public class HelloController {
         return "hello";
 //        return helloService.insertHelloEntity(entity);
     }
+
+    @RequestMapping(value="/deleteEntity",method = RequestMethod.GET)
+    public String deleteEntity(ModelMap model) {
+
+        HelloEntity entity = new HelloEntity();
+        entity.setPkid(-770400629);
+        int i = helloService.deleteHelloEntity(entity);
+        model.addAttribute("message", i);
+
+        return "hello";
+    }
 }

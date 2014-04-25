@@ -19,9 +19,13 @@
 
     <insert id="insertHello" parameterType="com.springserver.po.HelloEntity">
         <![CDATA[
-          insert into hello_table (PK_Id,Name,Age) values (#{pkid},#{name},#{age})
+          INSERT INTO hello_table (PK_Id,Name,Age) VALUE (#{pkid},#{name},#{age})
         ]]>
     </insert>
+
+    <delete id="deleteHello" parameterType="com.springserver.po.HelloEntity">
+        DELETE FROM hello_table WHERE pk_id =  #{pkid,jdbcType=INTEGER}
+    </delete>
     <!--<resultMap id="currencyResultMap" type="com.the9.qjrun.po.account.Currency">-->
         <!--<id property="id" column="pk_id" />-->
         <!--<result property="currency1" column="currency1"/>-->
@@ -47,7 +51,4 @@
                 <!--where pk_id = #{id,jdbcType=INTEGER}-->
     <!--</update>-->
 
-    <!--<delete id="deleteCurrencyById" parameterType="com.the9.qjrun.po.account.Currency">-->
-        <!--delete from currency where pk_id =  #{id,jdbcType=INTEGER}-->
-    <!--</delete>-->
 </mapper>
