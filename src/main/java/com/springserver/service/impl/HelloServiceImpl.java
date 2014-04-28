@@ -30,4 +30,9 @@ public class HelloServiceImpl implements HelloService{
     public int deleteHelloEntity(HelloEntity entity) {
         return helloDao.deleteHello(entity);
     }
+
+    @Override
+    public int updateEntity(HelloEntity entity) {
+        return helloDao.updateHello(entity);
+    }
 }

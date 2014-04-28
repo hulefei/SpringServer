@@ -40,15 +40,15 @@
         <!--]]>-->
     <!--</select>-->
 
-    <!--<update id="updateCurrencyById" parameterType="com.the9.qjrun.po.account.Currency" >-->
+    <update id="updateHello" parameterType="com.springserver.po.HelloEntity" >
 
-          <!--update currency-->
-        <!--<set>-->
-            <!--<if test="currency1 != null">-->
-                <!--currency1 = #{currency1,jdbcType=INTEGER}-->
-            <!--</if>-->
-        <!--</set>-->
-                <!--where pk_id = #{id,jdbcType=INTEGER}-->
-    <!--</update>-->
+          update hello_table
+        <set>
+            <if test="pkid != null">
+                Name = #{name}
+            </if>
+        </set>
+                WHERE PK_Id = #{pkid,jdbcType=INTEGER}
+    </update>
 
 </mapper>

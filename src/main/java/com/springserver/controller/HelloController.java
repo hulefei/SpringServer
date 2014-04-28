@@ -49,4 +49,15 @@ public class HelloController {
 
         return "hello";
     }
+
+    @RequestMapping(value="/updateEntity",method = RequestMethod.GET)
+    public String updateEntity(ModelMap model) {
+        HelloEntity entity = new HelloEntity();
+        entity.setPkid(1);
+        entity.setName("name1_update1");
+        int i = helloService.updateEntity(entity);
+        model.addAttribute("message", i);
+        return "hello";
+    }
 }
+
