@@ -1,9 +1,11 @@
 package com.springserver.po;
 
+import java.io.Serializable;
+
 /**
- * Created by hanson on 14-4-25.
+ * @author hanson Created on 14-4-25.
  */
-public class HelloEntity {
+public class HelloEntity implements Serializable {
     private int pkid;
     private String name;
     private int age;
@@ -34,7 +36,8 @@ public class HelloEntity {
 
     @Override
     public String toString() {
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf;
+        buf = new StringBuilder();
         buf.append("pkid:").append(pkid).append(";");
         buf.append("name:").append(name).append(";");
         buf.append("age:").append(age).append(";");

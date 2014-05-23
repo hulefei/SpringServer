@@ -59,5 +59,14 @@ public class HelloController {
         model.addAttribute("message", i);
         return "hello";
     }
+
+
+    @RequestMapping(value="/memcached", method = RequestMethod.GET)
+    public String memcached(ModelMap model) {
+        HelloEntity ret = helloService.getHelloEntityDelay();
+        System.out.println(ret.getPkid());
+        model.addAttribute("message",ret.getPkid());
+        return "hello";
+    }
 }
 

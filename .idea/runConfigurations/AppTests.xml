@@ -4,7 +4,7 @@
     <module name="SpringServer" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
-    <option name="PACKAGE_NAME" value="com.hulefei.springserver" />
+    <option name="PACKAGE_NAME" value="com.springserver" />
     <option name="MAIN_CLASS_NAME" value="com.springserver.AppTests" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />

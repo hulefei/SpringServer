@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.annotation.Resource;
 
 /**
- * Created by hanson on 14-4-25.
+ * @author hanson Created on 14-4-25.
  */
 @Repository("helloDao")
 public class HelloDaoImpl implements HelloDao {
@@ -23,8 +23,7 @@ public class HelloDaoImpl implements HelloDao {
 
     @Override
     public int insertHello(HelloEntity entity) {
-        int insert = sqlSessionTemplate.insert("insertHello", entity);
-        return insert;
+        return sqlSessionTemplate.insert("insertHello", entity);
     }
 
     @Override
@@ -36,4 +35,5 @@ public class HelloDaoImpl implements HelloDao {
     public int updateHello(HelloEntity entity) {
         return sqlSessionTemplate.update("updateHello", entity);
     }
+
 }

@@ -92,6 +92,20 @@
             <version>4.8.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!--xmemcached-->
+        <dependency>
+            <groupId>com.google.code.simple-spring-memcached</groupId>
+            <artifactId>spring-cache</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.simple-spring-memcached</groupId>
+            <artifactId>xmemcached-provider</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <!--xmemcached-->
+
     </dependencies>
 
     <build>
