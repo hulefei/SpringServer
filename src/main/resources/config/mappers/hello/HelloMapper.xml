@@ -19,7 +19,7 @@
 
     <insert id="insertHello" parameterType="com.springserver.po.HelloEntity">
         <![CDATA[
-          INSERT INTO hello_table (PK_Id,Name,Age) VALUE (#{pkid},#{name},#{age})
+          INSERT INTO hello_table (PK_Id,Name,Age) VALUES (#{pkid},#{name},#{age})
         ]]>
     </insert>
 

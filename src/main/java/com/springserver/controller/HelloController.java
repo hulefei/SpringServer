@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.Random;
@@ -22,6 +23,15 @@ public class HelloController {
         return "hello";
     }
 
+    @RequestMapping(value="/getJson", method = RequestMethod.GET)
+    public @ResponseBody HelloEntity getJson() {
+        HelloEntity entity = new HelloEntity();
+        entity.setPkid(11);
+        entity.setName("hanson");
+        entity.setAge(32);
+        return entity;
+    }
+
 	@RequestMapping(value="/getEntity", method = RequestMethod.GET)
 	public String getEntity(ModelMap model) {
         HelloEntity entity = helloService.getHelloEntity();
@@ -36,32 +46,40 @@ public class HelloController {
         Random random = new Random();
         int rand = random.nextInt();
         entity.setPkid(rand);
-        entity.setName("name" + rand);
+        entity.setName("name + " + rand);
         entity.setAge(rand);
 
-        int ret = helloService.insertHelloEntity(entity);
-        model.addAttribute("message", ret);
+        int i = helloService.insertHelloEntity(entity);
+        System.out.println("affect : " + i);
+
+        String message = "insert:" + entity;
+        model.addAttribute("message", message);
         return "hello";
     }
 
     @RequestMapping(value="/deleteEntity",method = RequestMethod.GET)
     public String deleteEntity(ModelMap model) {
 
-        HelloEntity entity = new HelloEntity();
-        entity.setPkid(-770400629);
+        HelloEntity entity = helloService.getHelloEntity();
+
         int i = helloService.deleteHelloEntity(entity);
-        model.addAttribute("message", i);
+        System.out.println("affect : " + i);
+
+        String message = "delete:" + entity;
+        model.addAttribute("message", message);
 
         return "hello";
     }
 
     @RequestMapping(value="/updateEntity",method = RequestMethod.GET)
     public String updateEntity(ModelMap model) {
-        HelloEntity entity = new HelloEntity();
-        entity.setPkid(1);
-        entity.setName("name1_update1");
+        HelloEntity entity = helloService.getHelloEntity();
+        entity.setName(entity.getName() + " has update");
         int i = helloService.updateEntity(entity);
-        model.addAttribute("message", i);
+        System.out.println("affect : " + i);
+
+        String message = "update:" + entity;
+        model.addAttribute("message", message);
         return "hello";
     }
 //
