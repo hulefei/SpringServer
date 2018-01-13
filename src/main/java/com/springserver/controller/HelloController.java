@@ -16,8 +16,14 @@ public class HelloController {
     @Resource(name="helloService")
     private HelloService helloService;
 
-	@RequestMapping(value="/", method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String printWelcome(ModelMap model) {
+        model.addAttribute("message", "Welcome SpringServer!");
+        return "hello";
+    }
+
+	@RequestMapping(value="/getEntity", method = RequestMethod.GET)
+	public String getEntity(ModelMap model) {
         HelloEntity entity = helloService.getHelloEntity();
         System.out.println(entity.getPkid() + ":" + entity.getName() + ":" + entity.getAge());
         model.addAttribute("message", entity.toString());
@@ -36,7 +42,6 @@ public class HelloController {
         int ret = helloService.insertHelloEntity(entity);
         model.addAttribute("message", ret);
         return "hello";
-//        return helloService.insertHelloEntity(entity);
     }
 
     @RequestMapping(value="/deleteEntity",method = RequestMethod.GET)
@@ -59,14 +64,14 @@ public class HelloController {
         model.addAttribute("message", i);
         return "hello";
     }
-
-
-    @RequestMapping(value="/memcached", method = RequestMethod.GET)
-    public String memcached(ModelMap model) {
-        HelloEntity ret = helloService.getHelloEntityDelay();
-        System.out.println(ret.getPkid());
-        model.addAttribute("message",ret.getPkid());
-        return "hello";
-    }
+//
+//
+//    @RequestMapping(value="/memcached", method = RequestMethod.GET)
+//    public String memcached(ModelMap model) {
+//        HelloEntity ret = helloService.getHelloEntityDelay();
+//        System.out.println(ret.getPkid());
+//        model.addAttribute("message",ret.getPkid());
+//        return "hello";
+//    }
 }
 
