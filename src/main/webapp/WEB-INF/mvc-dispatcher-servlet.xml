@@ -2,14 +2,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:cache="http://www.springframework.org/schema/cache"
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
     <context:component-scan base-package="com.springserver"/>
+    <mvc:annotation-driven />
     <!--设置jdbc.properties路径-->
     <util:properties id="dataSourceProps" location="WEB-INF/jdbc.properties"/>
 
