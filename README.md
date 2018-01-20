@@ -9,5 +9,5 @@ Spring4 mvc + mybatis3 base framework
 
 
 ## 注意
-* 内部使用sqlite作为数据库连接，需要根据自己sqlite目录位置配置sqlite绝对路径，配置文件位置(src/main/webapp/WEB-INF/jdcb.properties)
+* 内部使用sqlite作为数据库连接,数据库放在resources目录下
 * memcached 的配置已经注释掉，因为memecached需要第三方软件，不能在项目中直接使用，之后会添加spring 缓存方式

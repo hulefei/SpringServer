@@ -40,6 +40,13 @@ public class HelloController {
         return "hello";
 	}
 
+    @RequestMapping(value="/getJsonEntity", method = RequestMethod.GET)
+    public @ResponseBody HelloEntity getJsonEntity() {
+        HelloEntity entity = helloService.getHelloEntity();
+        System.out.println(entity.getPkid() + ":" + entity.getName() + ":" + entity.getAge());
+        return entity;
+    }
+
     @RequestMapping(value="/insertEntity",method = RequestMethod.GET)
     public String insertEntity(ModelMap model) {
         HelloEntity entity = new HelloEntity();
