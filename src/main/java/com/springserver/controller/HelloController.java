@@ -2,6 +2,7 @@ package com.springserver.controller;
 
 import com.springserver.po.HelloEntity;
 import com.springserver.service.HelloService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +12,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class HelloController {
+
+    static public Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     @Resource(name="helloService")
     private HelloService helloService;
@@ -89,6 +95,21 @@ public class HelloController {
         model.addAttribute("message", message);
         return "hello";
     }
+
+    @RequestMapping(value = "/logtest", method = RequestMethod.GET)
+    public String logtest(ModelMap model) {
+        System.out.println("system log");
+        logger.trace("trace message");
+        logger.debug("debug message");
+        logger.info("info message");
+        logger.warn("warn message");
+        logger.error("error message");
+//        logger.fatal("fatal message");
+        System.out.println("Hello World!");
+        model.addAttribute("message", "watch console:[log file is under the directory of tomcat ]");
+        return "hello";
+    }
+
 //
 //
 //    @RequestMapping(value="/memcached", method = RequestMethod.GET)

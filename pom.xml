@@ -8,16 +8,11 @@
     <name>SpringServer</name>
 
     <properties>
-        <spring.version>4.3.13.RELEASE</spring.version>
+        <spring.version>5.0.2.RELEASE</spring.version>
     </properties>
 
     <!--使用阿里maven代理-->
     <repositories>
-        <!--<repository>-->
-            <!--<id>oa_releases</id>-->
-            <!--<name>internal repository</name>-->
-            <!--<url>http://maven.oa.com/nexus/content/groups/public/</url>-->
-        <!--</repository>-->
         <repository>
         <id>alimaven</id>
         <name>aliyun maven</name>
@@ -26,6 +21,50 @@
     </repositories>
 
     <dependencies>
+        <!--logger begin-->
+        <dependency> <!-- 桥接：告诉Slf4j使用Log4j2 -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency> <!-- 桥接：告诉commons logging使用Log4j2 -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+        <!--logger end-->
+
         <!-- spring4 需要 servlet3.0 以上 -->
         <dependency>
             <groupId>javax.servlet</groupId>
