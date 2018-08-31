@@ -2,11 +2,11 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="MySQL - test@42.121.4.97" uuid="da6de27a-1eef-48a6-9796-39a3f62465ae">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
       <user-name>hulefei</user-name>
     </data-source>
     <data-source name="SQLite" uuid="078ed6c9-8edc-49d3-872a-f6c6190bed91">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="SQLITE" exact-version="0.0" />
     </data-source>
   </component>
 </project>

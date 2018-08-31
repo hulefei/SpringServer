@@ -39,16 +39,17 @@
     </bean>
 
 
-    <!--<cache:annotation-driven cache-manager="cacheManager"/>-->
-    <!--&lt;!&ndash;<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">&ndash;&gt;-->
-        <!--&lt;!&ndash;<property name="caches">&ndash;&gt;-->
-            <!--&lt;!&ndash;<set>&ndash;&gt;-->
-                <!--&lt;!&ndash;<bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="default"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;<bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="books"/>&ndash;&gt;-->
-            <!--&lt;!&ndash;</set>&ndash;&gt;-->
-        <!--&lt;!&ndash;</property>&ndash;&gt;-->
-    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+    <cache:annotation-driven cache-manager="cacheManager"/>
+    <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+        <property name="caches">
+            <set>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="defaultCache"/>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="books"/>
+            </set>
+        </property>
+    </bean>
 
+    <!--&lt;!&ndash; memcache cacheManager config Start&ndash;&gt;-->
     <!--<bean name="cacheManager" class="com.google.code.ssm.spring.SSMCacheManager">-->
         <!--<property name="caches">-->
             <!--<set>-->
@@ -63,7 +64,6 @@
             <!--</set>-->
         <!--</property>-->
     <!--</bean>-->
-
     <!--<bean name="defaultCache" class="com.google.code.ssm.CacheFactory">-->
         <!--<property name="cacheName" value="defaultCache" />-->
         <!--<property name="cacheClientFactory">-->
@@ -80,5 +80,6 @@
             <!--</bean>-->
         <!--</property>-->
     <!--</bean>-->
+    <!--&lt;!&ndash; memcache cacheManager config Start&ndash;&gt;-->
 
 </beans>

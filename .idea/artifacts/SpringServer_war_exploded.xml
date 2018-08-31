@@ -32,6 +32,12 @@
           <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.7.2" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.1.1" />
+          <element id="library" level="project" name="Maven: com.google.code.simple-spring-memcached:spring-cache:3.4.0" />
+          <element id="library" level="project" name="Maven: com.google.code.simple-spring-memcached:simple-spring-memcached:3.4.0" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.6.8" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.8" />
+          <element id="library" level="project" name="Maven: com.google.code.simple-spring-memcached:xmemcached-provider:3.4.0" />
+          <element id="library" level="project" name="Maven: com.googlecode.xmemcached:xmemcached:1.4.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

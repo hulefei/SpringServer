@@ -110,14 +110,12 @@ public class HelloController {
         return "hello";
     }
 
-//
-//
-//    @RequestMapping(value="/memcached", method = RequestMethod.GET)
-//    public String memcached(ModelMap model) {
-//        HelloEntity ret = helloService.getHelloEntityDelay();
-//        System.out.println(ret.getPkid());
-//        model.addAttribute("message",ret.getPkid());
-//        return "hello";
-//    }
+    @RequestMapping(value="/cache", method = RequestMethod.GET)
+    public String cache(ModelMap model) {
+        HelloEntity ret = helloService.getHelloEntityDelay();
+        System.out.println(ret.getPkid());
+        model.addAttribute("message",ret.getPkid());
+        return "hello";
+    }
 }
 

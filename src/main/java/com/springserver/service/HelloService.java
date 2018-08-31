@@ -12,5 +12,5 @@ public interface HelloService {
     public int deleteHelloEntity(HelloEntity entity);
     public int updateEntity(HelloEntity entity);
 
-//    public HelloEntity getHelloEntityDelay();
+    public HelloEntity getHelloEntityDelay();
 }

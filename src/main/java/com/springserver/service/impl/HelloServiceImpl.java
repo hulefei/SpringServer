@@ -38,21 +38,21 @@ public class HelloServiceImpl implements HelloService {
         return helloDao.updateHello(entity);
     }
 
-//    @Cacheable(value="defaultCache")
-//    @Override
-//    public HelloEntity getHelloEntityDelay() {
-//        System.out.println("HelloServiceImpl::getHelloEntityDelay");
-//        try {
-//            //延时返回
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        Random random= new Random();
-//        HelloEntity entity = new HelloEntity();
-//        entity.setName("aaa");
-//        entity.setPkid(random.nextInt());
-//        entity.setAge(random.nextInt());
-//        return entity;
-//    }
+    @Cacheable(value="defaultCache")
+    @Override
+    public HelloEntity getHelloEntityDelay() {
+        System.out.println("HelloServiceImpl::getHelloEntityDelay");
+        try {
+            //延时返回
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Random random= new Random();
+        HelloEntity entity = new HelloEntity();
+        entity.setName("aaa");
+        entity.setPkid(random.nextInt());
+        entity.setAge(random.nextInt());
+        return entity;
+    }
 }
