@@ -8,7 +8,7 @@
     <name>SpringServer</name>
 
     <properties>
-        <spring.version>5.0.3.RELEASE</spring.version>
+        <spring.version>5.0.7.RELEASE</spring.version>
     </properties>
 
     <!--使用阿里maven代理-->
